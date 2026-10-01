@@ -253,12 +253,13 @@ textarea {
     );
     box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
     border: 10px solid white;
+    overflow: hidden;
 }
 
-.profile-circle span {
-    font-size: 7rem;
-    font-weight: 800;
-    color: white;
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -514,8 +515,27 @@ textarea {
     transition: transform 0.4s ease;
 }
 
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    padding: 0 14px 14px;
+}
+
+.project-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.4s ease;
+}
+
 .project-card:hover .project-image img {
     transform: scale(1.05);
+}
+
+.project-card:hover .project-gallery img {
+    transform: scale(1.03);
 }
 
 .project-content {
@@ -958,10 +978,6 @@ body.dark-mode .secondary-btn:hover {
     .profile-circle {
         width: 230px;
         height: 230px;
-    }
-
-    .profile-circle span {
-        font-size: 5rem;
     }
 
     .skills-grid {
